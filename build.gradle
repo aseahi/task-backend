@@ -10,7 +10,7 @@ description = 'task-backend'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -36,8 +36,3 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-}
