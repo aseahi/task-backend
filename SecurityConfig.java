@@ -36,7 +36,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // 許可するフロントエンドのURL（ご自身のVercelのURLに変更してください。末尾の「/」は除きます）
-        configuration.setAllowedOrigins(List.of("https://あなたのフロントエンドのURL.vercel.app"));
+        configuration.setAllowedOrigins(List.of("https://final-task-orpin.vercel.app"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true); // クッキーや認証情報を使う場合はtrue
