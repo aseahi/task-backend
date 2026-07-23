@@ -4,18 +4,18 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "tasks") // データベースのテーブル名
+@Table(name = "tasks")
 @Data
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // IDを自動採番する設定
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false) // 必須項目
+    @Column(nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT") // メモ用（長い文章対応）
+    @Column(columnDefinition = "TEXT")
     private String taskMemo;
 
-    private boolean isCompleted = false; // デフォルト値：未完了
+    private boolean isCompleted = false;
 }
