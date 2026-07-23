@@ -2,14 +2,14 @@ package org.example.taskbackend.controller;
 
 import org.example.taskbackend.model.Task;
 import org.example.taskbackend.service.TaskService;
-import org.springframework.http.ResponseEntity; 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Map; 
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api") 
-@CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@RequestMapping("/api")
+@CrossOrigin(origins = {"http://localhost:5173", "https://final-task-orpin.vercel.app"}, allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class TaskController {
 
     private final TaskService taskService;
@@ -18,7 +18,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    
+
     @GetMapping("/tasks")
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
@@ -44,13 +44,13 @@ public class TaskController {
         return taskService.getTaskById(id);
     }
 
-    
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
-        String userId = credentials.get("userId"); 
-        String password = credentials.get("password"); 
+        String userId = credentials.get("userId");
+        String password = credentials.get("password");
 
-        
+
         System.out.println("受信したID: " + userId);
         System.out.println("受信したパスワード: " + password);
 
