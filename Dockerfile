@@ -1,7 +1,4 @@
-FROM eclipse-temurin:17-jdk-jammy
-WORKDIR /app
-COPY . .
-RUN apt-get update && apt-get install -y gradle
-RUN gradle bootJar
-EXPOSE 8080
-CMD ["java", "-jar", "build/libs/*.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+COPY build/libs/task-backend-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
